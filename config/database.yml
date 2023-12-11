@@ -4,6 +4,8 @@
 #   gem install pg
 # On macOS with Homebrew:
 #   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+# On macOS with MacPorts:
+#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
 # On Windows:
 #   gem install pg
 #       Choose the win32 build.
@@ -23,14 +25,14 @@ development:
   <<: *default
   database: pass_point_development
 
-  # The specified database role being used to connect to PostgreSQL.
-  # To create additional roles in PostgreSQL see `$ createuser --help`.
-  # When left blank, PostgreSQL will use the default role. This is
+  # The specified database role being used to connect to postgres.
+  # To create additional roles in postgres see `$ createuser --help`.
+  # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: pass_point
+  username: postgres
 
-  # The password associated with the PostgreSQL role (username).
-  #password:
+  # The password associated with the postgres role (username).
+  password: meryem99
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -56,6 +58,8 @@ development:
 test:
   <<: *default
   database: pass_point_test
+  username: postgres
+  password: meryem99
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
